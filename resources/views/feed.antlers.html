@@ -1,0 +1,20 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>{{ settings:site_name | cdata ?? config:app:name | cdata }}</title>
+        <link>{{ link to="/" absolute="true" }}</link>
+        <description>{{ settings:site_description | cdata }}</description>
+        <atom:link href="{{ link to='/feed' absolute='true' }}" rel="self" type="application/rss+xml" />
+        {{ collection in="articles" }}
+        <item>
+            <title>{{ title | cdata }}</title>
+            <link>{{ permalink }}</link>
+            <pubDate>{{ date format="D, d M y H:i:s O" }}</pubDate>
+            <description>{{ excerpt | cdata ?? content | strip_tags | limit(160) | cdata }}</description>
+            {{ author }}
+            <author>{{ email }} ({{ name }})</author>
+            {{ /author }}
+            <guid isPermaLink="false">{{ id }}</guid>
+        </item>
+        {{ /collection }}
+    </channel>
+</rss>

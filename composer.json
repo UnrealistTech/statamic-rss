@@ -1,0 +1,30 @@
+{
+    "name": "unrealist/statamic-rss",
+    "description": "Add a Simple RSS feed to your Statamic 3 site",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Unrealist\\StatamicRss\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dustin LeBlanc",
+            "email": "dustin@unreal.ist"
+        }
+    ],
+    "extra": {
+        "statamic": {
+            "name": "Simple RSS",
+            "description": "Provides a really simple RSS feed for your site's content"
+        },
+        "laravel": {
+            "providers": [
+                "Unrealist\\StatamicRss\\StatamicRssProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "statamic/cms": "^3.0"
+    }
+}
