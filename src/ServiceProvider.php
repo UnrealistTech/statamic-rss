@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Statamic\Providers\AddonServiceProvider;
 use Statamic\Statamic;
 
-class StatamicRssProvider extends AddonServiceProvider
+class ServiceProvider extends AddonServiceProvider
 {
     public function boot()
     {
